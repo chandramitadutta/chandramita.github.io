@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Data Viz Practice — Lab — Chandramita Dutta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pages.css">
+</head>
+<body>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav class="inner-nav">
+    <div class="inner-nav-inner">
+      <a href="../index.html#lab" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to the lab
+      </a>
+      <a href="../index.html" class="inner-nav-logo">cd<span class="accent">.</span></a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article class="lab-page">
+
+      <header class="lab-page-header">
+        <div class="lab-page-toprow">
+          <span class="status-badge" data-status="in-progress">ongoing</span>
+          <span class="lab-page-started">Started October 2023</span>
+        </div>
+        <h1 class="lab-page-title">Weekly Data Viz Practice</h1>
+        <p class="lab-page-subtitle">One dataset, one visualization, every week. An attempt to build visual intuition. Some are beautiful, most are just instructive — both count.</p>
+        <div class="lab-page-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">D3.js</span>
+          <span class="tag">Observable</span>
+          <span class="tag">Altair</span>
+        </div>
+      </header>
+
+      <div class="lab-status-block">
+        <div>
+          <div class="lab-status-item-label">Started</div>
+          <div class="lab-status-item-value">October 2023</div>
+        </div>
+        <div>
+          <div class="lab-status-item-label">Visualizations made</div>
+          <div class="lab-status-item-value">[ update this ]</div>
+        </div>
+        <div>
+          <div class="lab-status-item-label">Weeks missed</div>
+          <div class="lab-status-item-value">[ be honest ]</div>
+        </div>
+        <div>
+          <div class="lab-status-item-label">Favourite so far</div>
+          <div class="lab-status-item-value">[ week # — title ]</div>
+        </div>
+      </div>
+
+      <div class="lab-body">
+
+        <div class="lab-section">
+          <h3 class="lab-section-title">Why This Practice</h3>
+          <p>Data visualization is one of those skills that improves slowly and then quickly. For a long time I could make correct charts — axes labeled, data accurate, no misleading scales. What I couldn't reliably do was make charts that communicated something worth knowing, or that were genuinely interesting to look at.</p>
+          <p>The weekly practice is an attempt to compress that learning curve. One dataset, one hour (roughly), one chart. The constraint is the point.</p>
+        </div>
+
+        <div class="lab-section">
+          <h3 class="lab-section-title">The Archive</h3>
+          <p>[ Add your visualizations here as you make them. Each entry below is a template — duplicate and fill in. You can embed images directly or link to Observable notebooks. ]</p>
+
+          <!-- Viz entry template — duplicate this for each week -->
+          <div style="margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border);">
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px;">
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent);">Week 01</span>
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);">October 2023</span>
+            </div>
+            <h3 style="font-size: 1rem; color: var(--text); margin-bottom: 10px;">[ Visualization title ]</h3>
+            <!-- Replace the div below with an <img> tag when you have the actual image -->
+            <div style="width: 100%; aspect-ratio: 16/9; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.1em;">[ embed visualization image or Observable iframe here ]</span>
+            </div>
+            <p style="font-size: 0.87rem; color: var(--text-muted); line-height: 1.7;">[ Dataset: what you used. What you were trying to show. What worked, what didn't. One honest observation. ]</p>
+          </div>
+
+          <div style="background: var(--bg-2); border: 1px dashed var(--border); border-radius: var(--radius); padding: 24px; text-align: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.06em;">More weeks being added. Come back soon.</p>
+          </div>
+        </div>
+
+        <div class="lab-section">
+          <h3 class="lab-section-title">What I've Learned So Far</h3>
+          <p>[ Write this as the practice accumulates — a few observations about your own visual intuition, what you keep reaching for, what you've had to unlearn. ]</p>
+          <div class="lab-note">
+            <strong>Running principle:</strong> [ A principle or rule-of-thumb you've developed from the practice. Something you didn't know before you started. ]
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

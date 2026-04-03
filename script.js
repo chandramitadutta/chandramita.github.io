@@ -269,6 +269,38 @@
 
 
 /* ============================================================
+   READING PROGRESS BAR (writing & lab pages)
+============================================================ */
+(function initReadingProgress() {
+  const bar = document.getElementById('readingProgress');
+  if (!bar) return;
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total    = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+  }, { passive: true });
+})();
+
+
+/* ============================================================
+   SHELF TABS (Books / Films toggle)
+============================================================ */
+(function initShelfTabs() {
+  const buttons  = document.querySelectorAll('.shelf-tab-btn');
+  const contents = document.querySelectorAll('.shelf-tab-content');
+  if (!buttons.length) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      buttons.forEach(b  => b.classList.toggle('active',  b === btn));
+      contents.forEach(c => c.classList.toggle('active', c.getAttribute('data-tab') === tab));
+    });
+  });
+})();
+
+
+/* ============================================================
    SMOOTH ANCHOR SCROLL (accounts for fixed nav)
 ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

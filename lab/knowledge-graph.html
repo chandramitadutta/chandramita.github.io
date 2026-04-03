@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Knowledge Graph — Lab — Chandramita Dutta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pages.css">
+  <!-- Prism.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav class="inner-nav">
+    <div class="inner-nav-inner">
+      <a href="../index.html#lab" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to the lab
+      </a>
+      <a href="../index.html" class="inner-nav-logo">cd<span class="accent">.</span></a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <article class="lab-page">
+
+      <!-- Header -->
+      <header class="lab-page-header">
+        <div class="lab-page-toprow">
+          <span class="status-badge" data-status="in-progress">in-progress</span>
+          <span class="lab-page-started">Started March 2024</span>
+        </div>
+        <h1 class="lab-page-title">Personal Knowledge Graph</h1>
+        <p class="lab-page-subtitle">Connecting Obsidian notes to a Neo4j graph database to surface unexpected connections across topics I've been thinking about for years.</p>
+        <div class="lab-page-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Neo4j</span>
+          <span class="tag">Obsidian</span>
+          <span class="tag">Cypher</span>
+          <span class="tag">Graph Theory</span>
+        </div>
+      </header>
+
+      <!-- Status snapshot -->
+      <div class="lab-status-block">
+        <div>
+          <div class="lab-status-item-label">Status</div>
+          <div class="lab-status-item-value">Active exploration</div>
+        </div>
+        <div>
+          <div class="lab-status-item-label">Notes ingested</div>
+          <div class="lab-status-item-value">~340 notes</div>
+        </div>
+        <div>
+          <div class="lab-status-item-label">Nodes in graph</div>
+          <div class="lab-status-item-value">~1,200</div>
+        </div>
+        <div>
+          <div class="lab-status-item-label">Biggest surprise</div>
+          <div class="lab-status-item-value">Data ethics ↔ urban planning cluster</div>
+        </div>
+      </div>
+
+      <div class="lab-body">
+
+        <!-- Overview -->
+        <div class="lab-section">
+          <h3 class="lab-section-title">Overview</h3>
+          <p>I've been using Obsidian for note-taking for about two years. The problem with any note-taking system is that notes accumulate faster than connections — you end up with a lot of individual thoughts but no map of how they relate to each other.</p>
+          <p>This project is an attempt to fix that. I parse my Obsidian vault, extract entities and relationships, load them into a Neo4j graph database, and then use Cypher queries to explore the structure. The goal isn't to build a search engine — I have that. The goal is to find clusters, bridges, and unexpected paths between ideas I hadn't consciously connected.</p>
+        </div>
+
+        <!-- Architecture -->
+        <div class="lab-section">
+          <h3 class="lab-section-title">Architecture</h3>
+          <p>The pipeline has three stages: parse, extract, load.</p>
+
+          <span class="code-label">parse_vault.py — walk the Obsidian vault and extract raw note data</span>
+          <pre><code class="language-python">import os
+import re
+from pathlib import Path
+from dataclasses import dataclass, field
+from typing import List
+
+@dataclass
+class Note:
+    title: str
+    path: str
+    body: str
+    tags: List[str] = field(default_factory=list)
+    links: List[str] = field(default_factory=list)  # [[wikilinks]]
+
+def parse_vault(vault_path: str) -> List[Note]:
+    notes = []
+    for md_file in Path(vault_path).rglob("*.md"):
+        body = md_file.read_text(encoding="utf-8")
+        # Extract [[wikilinks]]
+        links = re.findall(r'\[\[([^\]]+)\]\]', body)
+        # Extract #tags
+        tags  = re.findall(r'#(\w[\w/-]*)', body)
+        notes.append(Note(
+            title=md_file.stem,
+            path=str(md_file),
+            body=body,
+            tags=list(set(tags)),
+            links=[l.split('|')[0].strip() for l in links],
+        ))
+    return notes</code></pre>
+
+          <p>The extraction stage uses a lightweight NER pass to pull out named entities (people, concepts, places) and classify them as nodes. Links between notes become edges. Tags become node labels.</p>
+
+          <span class="code-label">load_graph.py — push nodes and relationships into Neo4j</span>
+          <pre><code class="language-python">from neo4j import GraphDatabase
+
+class KnowledgeGraph:
+    def __init__(self, uri: str, user: str, password: str):
+        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+
+    def add_note(self, note: Note):
+        with self.driver.session() as session:
+            session.run(
+                """
+                MERGE (n:Note {title: $title})
+                SET n.path = $path, n.tags = $tags
+                """,
+                title=note.title, path=note.path, tags=note.tags
+            )
+            for linked_title in note.links:
+                session.run(
+                    """
+                    MERGE (a:Note {title: $from_title})
+                    MERGE (b:Note {title: $to_title})
+                    MERGE (a)-[:LINKS_TO]->(b)
+                    """,
+                    from_title=note.title, to_title=linked_title
+                )</code></pre>
+        </div>
+
+        <!-- Querying -->
+        <div class="lab-section">
+          <h3 class="lab-section-title">Querying the Graph</h3>
+          <p>The interesting part is what Cypher lets you ask. Standard Obsidian search is keyword-based — this lets you ask structural questions.</p>
+
+          <span class="code-label">Find notes that bridge two topic clusters</span>
+          <pre><code class="language-python"># Cypher: find high-betweenness nodes (manual approximation)
+query = """
+MATCH (n:Note)
+WHERE size((n)--()) > 10
+WITH n, size((n)-->()) AS out_degree, size((n)<--()) AS in_degree
+RETURN n.title AS note,
+       out_degree + in_degree AS total_connections
+ORDER BY total_connections DESC
+LIMIT 20
+"""</code></pre>
+
+          <div class="lab-note">
+            <strong>Unexpected finding:</strong> The most-connected bridging note in my vault isn't about data science at all — it's a note about urban planning and how cities encode the assumptions of their designers. It connects to a cluster about algorithmic bias, a cluster about infrastructure, and somehow also to a cluster about pedagogy. I hadn't noticed that connection consciously.
+          </div>
+        </div>
+
+        <!-- What I'm figuring out -->
+        <div class="lab-section">
+          <h3 class="lab-section-title">What I'm Still Figuring Out</h3>
+          <p>The pipeline works, but the graph quality depends heavily on how consistently I've written notes. Notes with lots of wikilinks are well-connected; older notes I wrote in isolation are orphans. I'm thinking about whether to retroactively add links or to accept the graph as a faithful record of how I was thinking at the time.</p>
+          <p>The bigger open question: what's the right way to visualize this? Neo4j Browser gives me a force-directed graph but it becomes unreadable past ~200 nodes. I'm exploring whether D3.js or a custom Python visualization would let me highlight specific subgraphs — show me everything in the "data ethics" cluster and its first-degree neighbors, for instance.</p>
+          <p>Next step: experiment with graph embeddings (Node2Vec) to see if I can find semantically similar notes that aren't explicitly linked.</p>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <script src="../script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</body>
+</html>

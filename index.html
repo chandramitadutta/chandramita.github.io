@@ -24,6 +24,7 @@
     <a href="#work">Work</a>
     <a href="#lab">Lab</a>
     <a href="#about">About</a>
+    <a href="#walls">Walls</a>
     <a href="mailto:hello@chandramitadutta.com">Say Hello</a>
   </div>
 
@@ -38,6 +39,7 @@
         <li><a href="#work" class="nav-link">Work</a></li>
         <li><a href="#lab" class="nav-link">Lab</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#walls" class="nav-link">Walls</a></li>
         <li><a href="mailto:hello@chandramitadutta.com" class="nav-link nav-cta">Say Hello</a></li>
       </ul>
 
@@ -72,9 +74,9 @@
 
       <!-- Tagline -->
       <p class="hero-tagline fade-up" data-delay="200">
-        I work with data to find patterns, build models, and tell stories.<br />
-        This is my studio — some work is finished, some is still becoming,<br />
-        some I've let go. All of it is real.
+        Engineer, data nerd, and learner. UC Berkeley MS Data Science '24.<br />
+        Building scalable data models for logistics at Flexport.<br />
+        This is my studio — finished work, experiments in motion, and everything in between.
       </p>
 
       <!-- CTA buttons -->
@@ -94,42 +96,57 @@
   </section>
 
   <!-- ============================================================
+       STUDIO NOTE / MANIFESTO
+  ============================================================ -->
+  <section class="studio-note" id="studio-note" aria-label="Studio note">
+    <div class="studio-note-inner">
+      <span class="studio-note-label">— a note on this space —</span>
+      <blockquote class="studio-note-text">
+        <p>This is my studio. Not a portfolio in the traditional sense — more like a workspace you've been invited into.</p>
+        <p>You'll find finished pieces here, things I'm proud of. But also experiments that didn't quite land, projects I abandoned halfway, and ideas still becoming. I show them all because I believe the process is as interesting as the product — and that honest, incomplete work is more useful than a curated highlight reel.</p>
+        <p>The walls? Those are mine. Books, films, writings, corners of the internet I keep returning to. Not data science work — but part of how I think. And thinking is where all the work begins.</p>
+      </blockquote>
+      <span class="studio-note-sig">— Chandramita</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
        SKILLS MARQUEE STRIP
   ============================================================ -->
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-track">
       <span class="marquee-content">
-        Python <span class="marquee-dot">·</span>
+        Advanced SQL <span class="marquee-dot">·</span>
+        Data Modeling <span class="marquee-dot">·</span>
         Machine Learning <span class="marquee-dot">·</span>
-        Deep Learning <span class="marquee-dot">·</span>
-        NLP <span class="marquee-dot">·</span>
+        Statistics <span class="marquee-dot">·</span>
+        A/B Testing <span class="marquee-dot">·</span>
         Data Visualization <span class="marquee-dot">·</span>
-        SQL <span class="marquee-dot">·</span>
-        PyTorch <span class="marquee-dot">·</span>
+        Python <span class="marquee-dot">·</span>
         scikit-learn <span class="marquee-dot">·</span>
         Pandas <span class="marquee-dot">·</span>
-        Spark <span class="marquee-dot">·</span>
-        Statistical Modeling <span class="marquee-dot">·</span>
-        A/B Testing <span class="marquee-dot">·</span>
-        Computer Vision <span class="marquee-dot">·</span>
+        NLP <span class="marquee-dot">·</span>
         Feature Engineering <span class="marquee-dot">·</span>
+        Data Ethics <span class="marquee-dot">·</span>
+        Spark <span class="marquee-dot">·</span>
+        Logistics Analytics <span class="marquee-dot">·</span>
       </span>
       <!-- Duplicate for seamless loop -->
       <span class="marquee-content" aria-hidden="true">
-        Python <span class="marquee-dot">·</span>
+        Advanced SQL <span class="marquee-dot">·</span>
+        Data Modeling <span class="marquee-dot">·</span>
         Machine Learning <span class="marquee-dot">·</span>
-        Deep Learning <span class="marquee-dot">·</span>
-        NLP <span class="marquee-dot">·</span>
+        Statistics <span class="marquee-dot">·</span>
+        A/B Testing <span class="marquee-dot">·</span>
         Data Visualization <span class="marquee-dot">·</span>
-        SQL <span class="marquee-dot">·</span>
-        PyTorch <span class="marquee-dot">·</span>
+        Python <span class="marquee-dot">·</span>
         scikit-learn <span class="marquee-dot">·</span>
         Pandas <span class="marquee-dot">·</span>
-        Spark <span class="marquee-dot">·</span>
-        Statistical Modeling <span class="marquee-dot">·</span>
-        A/B Testing <span class="marquee-dot">·</span>
-        Computer Vision <span class="marquee-dot">·</span>
+        NLP <span class="marquee-dot">·</span>
         Feature Engineering <span class="marquee-dot">·</span>
+        Data Ethics <span class="marquee-dot">·</span>
+        Spark <span class="marquee-dot">·</span>
+        Logistics Analytics <span class="marquee-dot">·</span>
       </span>
     </div>
   </div>
@@ -287,7 +304,7 @@
       <div class="lab-grid">
 
         <!-- Lab card 1: Knowledge Graph -->
-        <article class="lab-card fade-up" data-delay="0">
+        <article class="lab-card fade-up" data-delay="0" onclick="window.location='lab/knowledge-graph.html'" style="cursor:pointer;">
           <div class="lab-card-inner">
             <h3 class="lab-card-title">Personal Knowledge Graph</h3>
             <p class="lab-card-description">Connecting my Obsidian notes to a Neo4j graph database. Trying to surface unexpected connections across topics.</p>
@@ -305,7 +322,7 @@
         </article>
 
         <!-- Lab card 2: Multimodal Embeddings -->
-        <article class="lab-card fade-up" data-delay="80">
+        <article class="lab-card fade-up" data-delay="80" onclick="window.location='lab/multimodal-embeddings.html'" style="cursor:pointer;">
           <div class="lab-card-inner">
             <h3 class="lab-card-title">Multimodal Embeddings</h3>
             <p class="lab-card-description">What happens when you embed images and text in the same space? Playing with CLIP and building a personal semantic search over my photos.</p>
@@ -323,7 +340,7 @@
         </article>
 
         <!-- Lab card 3: Weekly Data Viz -->
-        <article class="lab-card fade-up" data-delay="160">
+        <article class="lab-card fade-up" data-delay="160" onclick="window.location='lab/weekly-dataviz.html'" style="cursor:pointer;">
           <div class="lab-card-inner">
             <h3 class="lab-card-title">Weekly Data Viz Practice</h3>
             <p class="lab-card-description">One dataset, one visualization, every week. An attempt to build visual intuition. Some are beautiful, most are instructive.</p>
@@ -364,12 +381,45 @@
 
         <!-- About content -->
         <div class="about-content fade-up" data-delay="100">
-          <h2 class="about-title">Hi, I'm Chandramita.</h2>
+          <h2 class="about-title">Hi, I'm Chandramita. <span class="about-pronouns">she/her</span></h2>
 
           <div class="about-bio">
-            <p>A data scientist based in [location]. I spend my days finding stories in data, building models that (usually) work, and occasionally explaining to non-technical stakeholders why the model said what it said.</p>
-            <p>I'm drawn to the messy, interesting parts of data science — the feature engineering sessions that go on too long, the model that works for reasons you don't fully understand, the visualization that reveals something unexpected.</p>
-            <p>Outside of data, I'm [interest], [interest], and [interest]. This site is my attempt to show the work honestly — not just the wins.</p>
+            <p>Engineer, data nerd, and perpetual learner. UC Berkeley alum (MS Data Science, 2024 🐻) — currently building efficient, scalable data models and extracting actionable insights for the logistics industry at <strong>Flexport</strong>.</p>
+            <p>Before logistics: product data analytics in fintech at <strong>Bill</strong>, data analytics in cybersecurity at <strong>Deloitte</strong>, and data &amp; cloud at <strong>Microsoft</strong>. Along the way I spent two years as a Graduate Student Instructor at Berkeley, mentored through AnitaB.org, and led gender equity initiatives in tech.</p>
+            <p>I'm drawn to the intersection of art, society, and science — the idea that data is most powerful when it's connected to human context. I'm an avid reader and listener on data ethics and AI, and a devoted fan of long podcasts about the lives of brilliant people in wildly different fields (best enjoyed while doing dishes).</p>
+            <!-- <p>I work with data to find patterns, build models, and tell stories.<br />
+              This is my studio — some work is finished, some is still becoming,<br />
+              some I've let go. All of it is real.</p> -->
+          </div>
+
+          <!-- Experience timeline -->
+          <div class="experience-list">
+            <h3 class="currently-title">Experience</h3>
+            <div class="exp-item">
+              <span class="exp-role">Data Analytics, AI &amp; Engineering — Logistics</span>
+              <span class="exp-company">Flexport</span>
+              <span class="exp-year">2024 – Present</span>
+            </div>
+            <div class="exp-item">
+              <span class="exp-role">Graduate Student Instructor</span>
+              <span class="exp-company">UC Berkeley</span>
+              <span class="exp-year">2022 – 2024</span>
+            </div>
+            <div class="exp-item">
+              <span class="exp-role">Product Data Analytics — Fintech</span>
+              <span class="exp-company">Bill</span>
+              <span class="exp-year">2023</span>
+            </div>
+            <div class="exp-item">
+              <span class="exp-role">Data Analytics — Cybersecurity</span>
+              <span class="exp-company">Deloitte</span>
+              <span class="exp-year">2018 – 2022</span>
+            </div>
+            <div class="exp-item">
+              <span class="exp-role">Data &amp; Cloud</span>
+              <span class="exp-company">Microsoft</span>
+              <span class="exp-year">2017</span>
+            </div>
           </div>
 
           <!-- Currently widget -->
@@ -377,20 +427,20 @@
             <h3 class="currently-title">Currently</h3>
             <div class="currently-grid">
               <div class="currently-item">
-                <span class="currently-label">Reading</span>
-                <span class="currently-value"><em>[book title]</em> by [Author]</span>
+                <span class="currently-label">Working on</span>
+                <span class="currently-value">Scalable data models for logistics</span>
               </div>
               <div class="currently-item">
                 <span class="currently-label">Listening to</span>
-                <span class="currently-value">[Artist / Album]</span>
+                <span class="currently-value">Long podcasts about brilliant people</span>
               </div>
               <div class="currently-item">
                 <span class="currently-label">Building</span>
-                <span class="currently-value">Sales forecasting dashboard</span>
+                <span class="currently-value">This portfolio</span>
               </div>
               <div class="currently-item">
-                <span class="currently-label">Learning</span>
-                <span class="currently-value">Graph neural networks</span>
+                <span class="currently-label">Reading</span>
+                <span class="currently-value">Data ethics &amp; AI advancements</span>
               </div>
             </div>
           </div>
@@ -412,6 +462,205 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: THE STUDIO WALLS
+  ============================================================ -->
+  <section class="section section--walls" id="walls">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">04 — The Studio Walls</span>
+        <h2 class="section-title">Beyond the Data</h2>
+        <p class="section-subtitle">The other walls of the studio — things I write, make, read, watch, and find beautiful on the internet.</p>
+      </div>
+
+      <!-- WRITINGS -->
+      <div class="walls-block fade-up">
+        <h3 class="walls-block-title">
+          <span>Writings</span>
+          <span class="walls-block-hint">thoughts, essays, notes</span>
+        </h3>
+        <div class="writings-grid">
+          <a href="writing/stats-romance.html" class="writing-card writing-card--published">
+            <span class="writing-date">April 2025 <span class="writing-published-badge">Published</span></span>
+            <h4 class="writing-title">A (Statistically Significant) Romance With Math</h4>
+            <p class="writing-pull">Admitting that I like math makes me sound boring almost instantly. But falling for statistics was the strangest, most rewarding relationship of my academic life.</p>
+            <span class="writing-read">Read →</span>
+          </a>
+          <a href="writing/teaching-data-science.html" class="writing-card">
+            <span class="writing-date">March 2024</span>
+            <h4 class="writing-title">What Two Years of Teaching Data Science Taught Me About Learning</h4>
+            <p class="writing-pull">The students who struggled most with the math were often the ones asking the most interesting questions about what the model was actually doing.</p>
+            <span class="writing-read">Read →</span>
+          </a>
+          <a href="writing/data-ethics.html" class="writing-card">
+            <span class="writing-date">November 2023</span>
+            <h4 class="writing-title">Data Ethics Isn't a Feature — It's the Foundation</h4>
+            <p class="writing-pull">We talk about "adding" fairness to models the way we talk about adding a safety feature to a car. But what if the design itself is the problem?</p>
+            <span class="writing-read">Read →</span>
+          </a>
+          <a href="writing/finding-patterns.html" class="writing-card">
+            <span class="writing-date">August 2023</span>
+            <h4 class="writing-title">On Finding Patterns in Unexpected Places</h4>
+            <p class="writing-pull">The most interesting insight from last year's project had nothing to do with what we set out to find. It rarely does.</p>
+            <span class="writing-read">Read →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- PHOTOGRAPHY -->
+      <div class="walls-block fade-up" style="--delay: 0.05s">
+        <h3 class="walls-block-title">
+          <span>Photographs</span>
+          <span class="walls-block-hint">moments worth keeping</span>
+        </h3>
+        <div class="photo-grid">
+          <div class="photo-cell photo-cell--tall">
+            <span class="photo-placeholder-text">photograph</span>
+          </div>
+          <div class="photo-cell">
+            <span class="photo-placeholder-text">photograph</span>
+          </div>
+          <div class="photo-cell">
+            <span class="photo-placeholder-text">photograph</span>
+          </div>
+          <div class="photo-cell photo-cell--wide">
+            <span class="photo-placeholder-text">photograph</span>
+          </div>
+          <div class="photo-cell">
+            <span class="photo-placeholder-text">photograph</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COOL CORNERS + SHELF side by side -->
+      <div class="walls-two-col fade-up" style="--delay: 0.1s">
+
+        <!-- Cool corners of the internet -->
+        <div class="walls-block">
+          <h3 class="walls-block-title">
+            <span>Cool Corners of the Internet</span>
+            <span class="walls-block-hint">sites I keep returning to</span>
+          </h3>
+          <div class="corners-list">
+            <a href="https://pudding.cool" target="_blank" rel="noopener noreferrer" class="corner-item">
+              <div class="corner-item-inner">
+                <span class="corner-name">The Pudding</span>
+                <span class="corner-url">pudding.cool</span>
+              </div>
+              <p class="corner-desc">Data journalism that feels like art. The gold standard for visual storytelling with data.</p>
+            </a>
+            <a href="https://flowingdata.com" target="_blank" rel="noopener noreferrer" class="corner-item">
+              <div class="corner-item-inner">
+                <span class="corner-name">Flowing Data</span>
+                <span class="corner-url">flowingdata.com</span>
+              </div>
+              <p class="corner-desc">Nathan Yau's take on visualization. I've learned more here than in most courses.</p>
+            </a>
+            <a href="https://distill.pub" target="_blank" rel="noopener noreferrer" class="corner-item">
+              <div class="corner-item-inner">
+                <span class="corner-name">Distill</span>
+                <span class="corner-url">distill.pub</span>
+              </div>
+              <p class="corner-desc">ML research made visual and human. The way all technical writing should be.</p>
+            </a>
+            <a href="https://observablehq.com" target="_blank" rel="noopener noreferrer" class="corner-item">
+              <div class="corner-item-inner">
+                <span class="corner-name">Observable</span>
+                <span class="corner-url">observablehq.com</span>
+              </div>
+              <p class="corner-desc">Where I go when I want to see what's possible with data visualization on the web.</p>
+            </a>
+            <a href="#" class="corner-item corner-item--placeholder">
+              <div class="corner-item-inner">
+                <span class="corner-name">add your own →</span>
+                <span class="corner-url">yoursite.com</span>
+              </div>
+              <p class="corner-desc">A site that changed how you see something.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- The Shelf -->
+        <div class="walls-block">
+          <h3 class="walls-block-title">
+            <span>The Shelf</span>
+            <span class="walls-block-hint">books &amp; films that stuck</span>
+          </h3>
+
+          <div class="shelf-tabs" id="shelfTabs">
+            <div class="shelf-tab-buttons">
+              <button class="shelf-tab-btn active" data-tab="books">Books</button>
+              <button class="shelf-tab-btn" data-tab="films">Films</button>
+            </div>
+
+            <div class="shelf-tab-content active" data-tab="books">
+              <div class="shelf-item">
+                <div class="shelf-item-spine" style="--spine-color: #c47c5a"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">Weapons of Math Destruction</span>
+                  <span class="shelf-item-meta">Cathy O'Neil</span>
+                  <p class="shelf-item-note">Changed how I think about the responsibility that comes with building models.</p>
+                </div>
+              </div>
+              <div class="shelf-item">
+                <div class="shelf-item-spine" style="--spine-color: #7a8fa6"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">The Signal and the Noise</span>
+                  <span class="shelf-item-meta">Nate Silver</span>
+                  <p class="shelf-item-note">On forecasting, uncertainty, and why being wrong is part of the job.</p>
+                </div>
+              </div>
+              <div class="shelf-item">
+                <div class="shelf-item-spine" style="--spine-color: #9b7fa6"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">Invisible Women</span>
+                  <span class="shelf-item-meta">Caroline Criado Perez</span>
+                  <p class="shelf-item-note">A masterclass in what happens when data ignores half the population.</p>
+                </div>
+              </div>
+              <div class="shelf-item shelf-item--placeholder">
+                <div class="shelf-item-spine" style="--spine-color: #3a3530"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">add a book →</span>
+                  <span class="shelf-item-meta">author</span>
+                  <p class="shelf-item-note">one line on why it matters to you</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="shelf-tab-content" data-tab="films">
+              <div class="shelf-item">
+                <div class="shelf-item-spine" style="--spine-color: #c47c5a"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">Coded Bias</span>
+                  <span class="shelf-item-meta">2020 · Shalini Kantayya</span>
+                  <p class="shelf-item-note">Essential watching. The conversation about algorithmic accountability we should all be having.</p>
+                </div>
+              </div>
+              <div class="shelf-item">
+                <div class="shelf-item-spine" style="--spine-color: #6a8c7a"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">The Social Dilemma</span>
+                  <span class="shelf-item-meta">2020 · Jeff Orlowski</span>
+                  <p class="shelf-item-note">Data + attention + incentives. Uncomfortable and important.</p>
+                </div>
+              </div>
+              <div class="shelf-item shelf-item--placeholder">
+                <div class="shelf-item-spine" style="--spine-color: #3a3530"></div>
+                <div class="shelf-item-body">
+                  <span class="shelf-item-title">add a film →</span>
+                  <span class="shelf-item-meta">year · director</span>
+                  <p class="shelf-item-note">one line on why it matters to you</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /walls-two-col -->
     </div>
   </section>
 
