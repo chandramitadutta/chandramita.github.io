@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandramita Dutta — Data Scientist</title>
+  <meta name="description" content="Data scientist working at the intersection of machine learning, statistics, and storytelling. Explore projects, experiments, and ongoing work." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <a href="#work">Work</a>
+    <a href="#lab">Lab</a>
+    <a href="#about">About</a>
+    <a href="mailto:hello@chandramitadutta.com">Say Hello</a>
+  </div>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">cd <span class="accent">.</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#lab" class="nav-link">Lab</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="mailto:hello@chandramitadutta.com" class="nav-link nav-cta">Say Hello</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <!-- Particle canvas background -->
+    <canvas id="networkCanvas"></canvas>
+
+    <div class="hero-content">
+      <!-- Availability label -->
+      <div class="availability-label fade-up" data-delay="0">
+        <span class="availability-dot"></span>
+        available for collaborations
+      </div>
+
+      <!-- Giant name -->
+      <h1 class="hero-name fade-up" data-delay="100">
+        Chandramita
+        <br />
+        <span class="name-serif">Dutta</span>
+      </h1>
+
+      <!-- Tagline -->
+      <p class="hero-tagline fade-up" data-delay="200">
+        I work with data to find patterns, build models, and tell stories.<br />
+        This is my studio — some work is finished, some is still becoming,<br />
+        some I've let go. All of it is real.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="hero-buttons fade-up" data-delay="300">
+        <a href="#work" class="btn btn-primary">Explore the Work</a>
+        <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint">scroll ↓</div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS MARQUEE STRIP
+  ============================================================ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-content">
+        Python <span class="marquee-dot">·</span>
+        Machine Learning <span class="marquee-dot">·</span>
+        Deep Learning <span class="marquee-dot">·</span>
+        NLP <span class="marquee-dot">·</span>
+        Data Visualization <span class="marquee-dot">·</span>
+        SQL <span class="marquee-dot">·</span>
+        PyTorch <span class="marquee-dot">·</span>
+        scikit-learn <span class="marquee-dot">·</span>
+        Pandas <span class="marquee-dot">·</span>
+        Spark <span class="marquee-dot">·</span>
+        Statistical Modeling <span class="marquee-dot">·</span>
+        A/B Testing <span class="marquee-dot">·</span>
+        Computer Vision <span class="marquee-dot">·</span>
+        Feature Engineering <span class="marquee-dot">·</span>
+      </span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-content" aria-hidden="true">
+        Python <span class="marquee-dot">·</span>
+        Machine Learning <span class="marquee-dot">·</span>
+        Deep Learning <span class="marquee-dot">·</span>
+        NLP <span class="marquee-dot">·</span>
+        Data Visualization <span class="marquee-dot">·</span>
+        SQL <span class="marquee-dot">·</span>
+        PyTorch <span class="marquee-dot">·</span>
+        scikit-learn <span class="marquee-dot">·</span>
+        Pandas <span class="marquee-dot">·</span>
+        Spark <span class="marquee-dot">·</span>
+        Statistical Modeling <span class="marquee-dot">·</span>
+        A/B Testing <span class="marquee-dot">·</span>
+        Computer Vision <span class="marquee-dot">·</span>
+        Feature Engineering <span class="marquee-dot">·</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION: THE WORK
+  ============================================================ -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">01 — The Work</span>
+        <h2 class="section-title">Projects &amp; Portfolio</h2>
+        <p class="section-subtitle">Data science work at various stages of life. Click to explore.</p>
+      </div>
+
+      <!-- Bento grid -->
+      <div class="bento-grid">
+
+        <!-- Card 1: Predictive Churn Model (featured, 2-col) -->
+        <article class="project-card project-card--featured fade-up" data-status="complete" data-delay="0">
+          <div class="card-header">
+            <div class="card-meta">
+              <span class="status-badge" data-status="complete">complete</span>
+              <span class="card-year">2024</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="#" class="card-link card-link--demo" aria-label="View live demo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Predictive Churn Model</h3>
+          <p class="card-description">Trained on a telecom dataset; identified key churn drivers using SHAP values, enabling targeted retention campaigns. Deployed as an interactive Streamlit app.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">Streamlit</span>
+          </div>
+        </article>
+
+        <!-- Card 2: NLP News Classifier -->
+        <article class="project-card fade-up" data-status="complete" data-delay="50">
+          <div class="card-header">
+            <div class="card-meta">
+              <span class="status-badge" data-status="complete">complete</span>
+              <span class="card-year">2023</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">NLP News Classifier</h3>
+          <p class="card-description">Fine-tuned BERT for multi-class classification across 20 news categories. Achieved 94% accuracy. Explored attention visualization to understand model decisions.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">BERT</span>
+            <span class="tag">HuggingFace</span>
+            <span class="tag">PyTorch</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Sales Forecasting Dashboard -->
+        <article class="project-card fade-up" data-status="in-progress" data-delay="100">
+          <div class="card-header">
+            <div class="card-meta">
+              <span class="status-badge" data-status="in-progress">in-progress</span>
+              <span class="card-year">2024</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Sales Forecasting Dashboard</h3>
+          <p class="card-description">Building an interactive time-series forecasting tool for retail sales data. Exploring Prophet vs. LSTM for prediction.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Prophet</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Dash</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Anomaly Detection -->
+        <article class="project-card fade-up" data-status="complete" data-delay="150">
+          <div class="card-header">
+            <div class="card-meta">
+              <span class="status-badge" data-status="complete">complete</span>
+              <span class="card-year">2023</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Anomaly Detection in Sensor Data</h3>
+          <p class="card-description">Unsupervised anomaly detection pipeline for IoT sensor streams. Compared Isolation Forest, LOF, and Autoencoder approaches.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">PyOD</span>
+          </div>
+        </article>
+
+        <!-- Card 5: GenAI Writing Assistant (archived, full-width) -->
+        <article class="project-card project-card--archived project-card--full fade-up" data-status="archived" data-delay="200">
+          <div class="card-header">
+            <div class="card-meta">
+              <span class="status-badge" data-status="archived">archived</span>
+              <span class="card-year">2023</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="archived-inner">
+            <div>
+              <h3 class="card-title">GenAI Writing Assistant</h3>
+              <p class="card-description">An experiment in fine-tuning a language model for a specific writing style. Abandoned when the model started writing better than me.</p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">OpenAI</span>
+              <span class="tag">PEFT</span>
+              <span class="tag">LoRA</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /bento-grid -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: THE LAB
+  ============================================================ -->
+  <section class="section section--lab" id="lab">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">02 — The Lab</span>
+        <h2 class="section-title">Experiments &amp; Curiosities</h2>
+        <p class="section-subtitle">Things I'm currently poking at. No guarantees of completion — just honest exploration.</p>
+      </div>
+
+      <div class="lab-grid">
+
+        <!-- Lab card 1: Knowledge Graph -->
+        <article class="lab-card fade-up" data-delay="0">
+          <div class="lab-card-inner">
+            <h3 class="lab-card-title">Personal Knowledge Graph</h3>
+            <p class="lab-card-description">Connecting my Obsidian notes to a Neo4j graph database. Trying to surface unexpected connections across topics.</p>
+            <div class="lab-meta">
+              <div class="lab-meta-item">
+                <span class="lab-meta-label">Started</span>
+                <span class="lab-meta-value">March 2024</span>
+              </div>
+              <div class="lab-meta-item">
+                <span class="lab-meta-label">Exploring</span>
+                <span class="lab-meta-value">graph traversal, cypher queries</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lab card 2: Multimodal Embeddings -->
+        <article class="lab-card fade-up" data-delay="80">
+          <div class="lab-card-inner">
+            <h3 class="lab-card-title">Multimodal Embeddings</h3>
+            <p class="lab-card-description">What happens when you embed images and text in the same space? Playing with CLIP and building a personal semantic search over my photos.</p>
+            <div class="lab-meta">
+              <div class="lab-meta-item">
+                <span class="lab-meta-label">Started</span>
+                <span class="lab-meta-value">January 2024</span>
+              </div>
+              <div class="lab-meta-item">
+                <span class="lab-meta-label">Exploring</span>
+                <span class="lab-meta-value">CLIP, semantic similarity, vector search</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lab card 3: Weekly Data Viz -->
+        <article class="lab-card fade-up" data-delay="160">
+          <div class="lab-card-inner">
+            <h3 class="lab-card-title">Weekly Data Viz Practice</h3>
+            <p class="lab-card-description">One dataset, one visualization, every week. An attempt to build visual intuition. Some are beautiful, most are instructive.</p>
+            <div class="lab-meta">
+              <div class="lab-meta-item">
+                <span class="lab-meta-label">Started</span>
+                <span class="lab-meta-value">October 2023</span>
+              </div>
+              <div class="lab-meta-item">
+                <span class="lab-meta-label">Archive</span>
+                <span class="lab-meta-value"><a href="#" class="lab-link">See the archive →</a></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION: ABOUT
+  ============================================================ -->
+  <section class="section section--about" id="about">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">03 — About</span>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Photo placeholder -->
+        <div class="about-photo fade-up" data-delay="0">
+          <div class="about-photo-inner">
+            <span class="about-photo-text">photo<br />coming<br />soon</span>
+          </div>
+        </div>
+
+        <!-- About content -->
+        <div class="about-content fade-up" data-delay="100">
+          <h2 class="about-title">Hi, I'm Chandramita.</h2>
+
+          <div class="about-bio">
+            <p>A data scientist based in [location]. I spend my days finding stories in data, building models that (usually) work, and occasionally explaining to non-technical stakeholders why the model said what it said.</p>
+            <p>I'm drawn to the messy, interesting parts of data science — the feature engineering sessions that go on too long, the model that works for reasons you don't fully understand, the visualization that reveals something unexpected.</p>
+            <p>Outside of data, I'm [interest], [interest], and [interest]. This site is my attempt to show the work honestly — not just the wins.</p>
+          </div>
+
+          <!-- Currently widget -->
+          <div class="currently-widget">
+            <h3 class="currently-title">Currently</h3>
+            <div class="currently-grid">
+              <div class="currently-item">
+                <span class="currently-label">Reading</span>
+                <span class="currently-value"><em>[book title]</em> by [Author]</span>
+              </div>
+              <div class="currently-item">
+                <span class="currently-label">Listening to</span>
+                <span class="currently-value">[Artist / Album]</span>
+              </div>
+              <div class="currently-item">
+                <span class="currently-label">Building</span>
+                <span class="currently-value">Sales forecasting dashboard</span>
+              </div>
+              <div class="currently-item">
+                <span class="currently-label">Learning</span>
+                <span class="currently-value">Graph neural networks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Links bar -->
+          <div class="about-links">
+            <a href="https://github.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="about-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/chandramitadutta" target="_blank" rel="noopener noreferrer" class="about-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://twitter.com/chandramitadutta" target="_blank" rel="noopener noreferrer" class="about-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter / X
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-copy">Chandramita Dutta &copy; 2024</span>
+        <span class="footer-note">Built with curiosity. Hosted on GitHub Pages.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
